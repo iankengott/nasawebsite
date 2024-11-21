@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA ADC Challenge 2025</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #000428, #004e92);
+            color: white;
+            text-align: center;
+        }
+        header {
+            background: #02203c;
+            padding: 20px;
+        }
+        h1, h2 {
+            margin: 10px 0;
+        }
+        .container {
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        input {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: none;
+            background: #00c6ff;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #007acc;
+        }
+        .output {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>NASA ADC Challenge 2025</h1>
+        <h2>Exploring Innovations in Space Technology</h2>
+    </header>
+    <div class="container">
+        <p>
+            Welcome to the NASA ADC Challenge 2025! This year, participants will explore advanced technologies to improve spacecraft navigation, communication, and more. Join us as we innovate for the next giant leap!
+        </p>
+        <h3>Interactive Distance Calculator</h3>
+        <p>
+            Enter the time (in seconds) to find out how far a spacecraft would travel toward the moon at an average speed of 1 km/s:
+        </p>
+        <input type="number" id="timeInput" placeholder="Time in seconds" />
+        <button onclick="calculateDistance()">Calculate</button>
+        <div class="output" id="output"></div>
+    </div>
+
+    <script>
+        const SPEED_KM_S = 1; // Average speed in km/s
+
+        function calculateDistance() {
+            const time = document.getElementById("timeInput").value;
+            if (!time || time < 0) {
+                document.getElementById("output").innerText = "Please enter a valid positive time value.";
+                return;
+            }
+
+            const distance = time * SPEED_KM_S;
+            document.getElementById("output").innerText = `In ${time} seconds, the spacecraft would travel approximately ${distance} km.`;
+        }
+    </script>
+</body>
+</html>
